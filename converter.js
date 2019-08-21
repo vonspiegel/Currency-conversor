@@ -30,7 +30,7 @@ const getCountries = async currencyCode => {
 const convertCurrency = async (fromCurrency, toCurrency, amount) => {
   const exchangeRate = await getExchangeRate(fromCurrency, toCurrency);
   const countries = await getCountries(toCurrency);
-  const total = amount * exchangeRate;
+  const total = (amount * exchangeRate).toFixed(2);
 
   return `${amount} ${fromCurrency} are ${total} ${toCurrency} that can be spent in ${countries}`;
 };
