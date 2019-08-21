@@ -35,8 +35,6 @@ const convertCurrency = async (fromCurrency, toCurrency, amount) => {
   return `${amount} ${fromCurrency} are ${total} ${toCurrency} that can be spent in ${countries}`;
 };
 
-convertCurrency('EUR', 'USD', '425') {
-  async message => (
-    await console.log(message)
-  )
-}
+convertCurrency('EUR', 'USD', '425').then(message => {
+  console.log(message);
+});
