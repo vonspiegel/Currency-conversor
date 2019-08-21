@@ -1,7 +1,4 @@
-/* API's
-Exchange rate: http://data.fixer.io/api/
-Countries: https://restcountries.eu/rest/v2/currency/${currency}
-
+/*
 1. getExchangeRate
 2. getCountries
 3. convertCurrency
@@ -35,17 +32,11 @@ const convertCurrency = async (fromCurrency, toCurrency, amount) => {
   const countries = await getCountries(toCurrency);
   const total = amount * exchangeRate;
 
-  console.log(
-    amount +
-      ' ' +
-      fromCurrency +
-      ' are ' +
-      total +
-      ' ' +
-      toCurrency +
-      ' that can be spent in ' +
-      countries
-  );
+  return `${amount} ${fromCurrency} are ${total} ${toCurrency} that can be spent in ${countries}`;
 };
 
-convertCurrency('EUR', 'USD', '425');
+convertCurrency('EUR', 'USD', '425') {
+  async message => (
+    await console.log(message)
+  )
+}
