@@ -35,7 +35,17 @@ const convertCurrency = async (fromCurrency, toCurrency, amount) => {
   const countries = await getCountries(toCurrency);
   const total = amount * exchangeRate;
 
-  console.log(amount + ' are ' + total + ' that can be spent in ' + countries);
+  console.log(
+    amount +
+      ' ' +
+      fromCurrency +
+      ' are ' +
+      total +
+      ' ' +
+      toCurrency +
+      ' that can be spent in ' +
+      countries
+  );
 };
 
-convertCurrency('EUR', 'USD', '123');
+convertCurrency('EUR', 'USD', '425');
