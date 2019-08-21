@@ -18,7 +18,7 @@ const getExchangeRate = async (fromCurrency, toCurrency) => {
   const ratio = 1 / from;
   const exchangeRate = ratio * rates[toCurrency];
 
-  console.log(exchangeRate);
+  return exchangeRate;
 };
 
 const getCountries = async currencyCode => {
@@ -27,8 +27,20 @@ const getCountries = async currencyCode => {
   );
 
   const dataArray = res.data.map(country => country.name);
-  console.log(dataArray);
+  return dataArray;
 };
 
-getExchangeRate('EUR', 'USD');
-getCountries('USD');
+const convertCurrency = async (
+  fromCurrency,
+  toCurrency,
+  currencyCode,
+  amount
+) => {
+  const exchangeRate = await getExchangeRate(fromCurrency, toCurrency);
+  const countries = await getCountries(currencyCode);
+  const total = amount * exchangeRate;
+
+  console.log(amount + ' are ' + total + ' that can be spent in ' + countries);
+};
+
+convertCurrency('EUR', 'USD', 'USD', '123');
