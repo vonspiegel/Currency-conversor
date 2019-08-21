@@ -30,17 +30,12 @@ const getCountries = async currencyCode => {
   return dataArray;
 };
 
-const convertCurrency = async (
-  fromCurrency,
-  toCurrency,
-  currencyCode,
-  amount
-) => {
+const convertCurrency = async (fromCurrency, toCurrency, amount) => {
   const exchangeRate = await getExchangeRate(fromCurrency, toCurrency);
-  const countries = await getCountries(currencyCode);
+  const countries = await getCountries(toCurrency);
   const total = amount * exchangeRate;
 
   console.log(amount + ' are ' + total + ' that can be spent in ' + countries);
 };
 
-convertCurrency('EUR', 'USD', 'USD', '123');
+convertCurrency('EUR', 'USD', '123');
