@@ -3,6 +3,7 @@
 2. getCountries
 3. convertCurrency
 */
+
 const axios = require('axios');
 
 const getExchangeRate = async (fromCurrency, toCurrency) => {
