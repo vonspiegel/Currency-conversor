@@ -45,5 +45,5 @@ convertCurrency('JPY', 'EUR', 4000000)
     console.log(message);
   })
   .catch(error => {
-    console.log(error);
+    console.log(error.message);
   });
