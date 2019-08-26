@@ -7,16 +7,20 @@
 const axios = require('axios');
 
 const getExchangeRate = async (fromCurrency, toCurrency) => {
-  const res = await axios.get(
-    'http://data.fixer.io/api/latest?access_key=cb50d38374c0eec4b37963d0908ee7e2&format=1'
-  );
+  try {
+    const res = await axios.get(
+      'http://data.fixer.io/api/latest?access_key=cb50d38374c0eec4b37963d0908ee7e2&format=1'
+    );
 
-  const rates = res.data.rates;
-  const from = rates[fromCurrency];
-  const ratio = 1 / from;
-  const exchangeRate = ratio * rates[toCurrency];
+    const rates = res.data.rates;
+    const from = rates[fromCurrency];
+    const ratio = 1 / from;
+    const exchangeRate = ratio * rates[toCurrency];
 
-  return exchangeRate;
+    return exchangeRate;
+  } catch (err) {
+    throw err;
+  }
 };
 
 const getCountries = async currencyCode => {
@@ -36,7 +40,7 @@ const convertCurrency = async (fromCurrency, toCurrency, amount) => {
   return `${amount} ${fromCurrency} are ${total} ${toCurrency} that can be spent in ${countries}`;
 };
 
-convertCurrency('EUR', 'USD', '425')
+convertCurrency('JPY', 'EUR', 4000000)
   .then(message => {
     console.log(message);
   })
