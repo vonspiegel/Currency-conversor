@@ -19,7 +19,7 @@ const getExchangeRate = async (fromCurrency, toCurrency) => {
 
     return exchangeRate;
   } catch (err) {
-    throw err;
+    throw err.message;
   }
 };
 
