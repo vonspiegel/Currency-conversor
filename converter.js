@@ -24,12 +24,16 @@ const getExchangeRate = async (fromCurrency, toCurrency) => {
 };
 
 const getCountries = async currencyCode => {
-  const res = await axios.get(
-    `https://restcountries.eu/rest/v2/currency/${currencyCode}`
-  );
+  try {
+    const res = await axios.get(
+      `https://restcountrie.eu/rest/v2/currency/${currencyCode}`
+    );
 
-  const dataArray = res.data.map(country => country.name);
-  return dataArray;
+    const dataArray = res.data.map(country => country.name);
+    return dataArray;
+  } catch (err) {
+    console.log('countriesError', err);
+  }
 };
 
 const convertCurrency = async (fromCurrency, toCurrency, amount) => {
