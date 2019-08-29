@@ -32,7 +32,7 @@ const getCountries = async currencyCode => {
     const dataArray = res.data.map(country => country.name);
     return dataArray;
   } catch (err) {
-    console.log('countriesError', err);
+    console.log('countriesError', err.message);
   }
 };
 
