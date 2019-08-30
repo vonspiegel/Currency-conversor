@@ -1,6 +1,6 @@
 /*
-1. getExchangeRate
-2. getCountries
+1. getExchangeRate API
+2. getCountries API
 3. convertCurrency
 */
 
