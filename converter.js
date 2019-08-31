@@ -26,7 +26,7 @@ const getExchangeRate = async (fromCurrency, toCurrency) => {
 const getCountries = async currencyCode => {
   try {
     const res = await axios.get(
-      `https://restcountrie.eu/rest/v2/currency/${currencyCode}`
+      `https://restcountries.eu/rest/v2/currency/${currencyCode}`
     );
 
     const dataArray = res.data.map(country => country.name);
@@ -49,5 +49,5 @@ convertCurrency('JPY', 'EUR', 4000000)
     console.log(message);
   })
   .catch(error => {
-    console.log(error.message);
+    return error.message;
   });
