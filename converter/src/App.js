@@ -7,7 +7,10 @@ function App() {
     <div className='App'>
       <header className='App-header'>
         <h2>Converter</h2>
-        <input type='text' value='Type here'></input>
+        <form action=''>
+          Amount of money to convert: <input type='text' name=''></input>
+          <input type='submit' value='Convert'></input>
+        </form>
       </header>
     </div>
   );
