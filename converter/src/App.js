@@ -10,7 +10,6 @@ function App() {
         <form action=''>
           Amount of money: <input type='text' name=''></input>
           <input type='submit' value='Convert'></input>
-          <button>Submit</button>
         </form>
       </header>
     </div>
