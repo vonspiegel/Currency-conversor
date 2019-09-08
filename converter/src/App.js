@@ -8,7 +8,7 @@ function App() {
       <header className='App-header'>
         <h2>Converter</h2>
         <form action=''>
-          To convert: <input type='text' name=''></input>
+          To convert <input type='text' name=''></input>
           <input type='submit' value='Convert'></input>
         </form>
       </header>
